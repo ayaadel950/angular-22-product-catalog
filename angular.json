@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "product-catalog": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [{ "glob": "**/*", "input": "public" }],
+            "styles": ["src/styles.scss"]
+          }
+        },
+        "serve": { "builder": "@angular/build:dev-server", "options": { "buildTarget": "product-catalog:build" } },
+        "test": { "builder": "@angular/build:unit-test" }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "f27fdfe0-63cd-4237-88aa-5f0f2d22faeb"
+  }
+}

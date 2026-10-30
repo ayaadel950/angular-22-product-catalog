@@ -1,0 +1,16 @@
+<header>
+    <a class="brand" routerLink="/products">ShopSimple</a>
+    <nav>
+        <a routerLink="/products" routerLinkActive="active">Products</a>
+        <a routerLink="/cart" routerLinkActive="active">Cart ({{ cart.itemCount() }})</a>
+        @if(auth.isLoggedIn()){
+            <button class="link" type="button" (click)="auth.logout()">Logout</button>
+        }
+        @else{
+            <a routerLink="/login" routerLinkActive="active">Login</a>
+        }
+    </nav>
+</header>
+<main>
+    <router-outlet />
+</main>

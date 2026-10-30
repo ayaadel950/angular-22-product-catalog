@@ -1,0 +1,12 @@
+<article class="card">
+  <a [routerLink]="['/products', product.id]" [attr.aria-label]="'View ' + product.title">
+    <img [src]="product.image" [alt]="product.title" />
+  </a>
+  <div class="content">
+    <span class="category">{{ product.category }}</span>
+    <h2>{{ product.title }}</h2>
+    <p>⭐ {{ product.rating.rate }} ({{ product.rating.count }})</p>
+    <strong>{{ product.price | currency }}</strong>
+    <button type="button" (click)="addToCart.emit(product)">Add to cart</button>
+  </div>
+</article>

@@ -1,0 +1,2 @@
+@if (loading()) { <app-loading-spinner /> } @else if (error()) { <div class="message error"><p>{{ error() }}</p><a routerLink="/products">Back to products</a></div> }
+@else if (product(); as item) { <article class="details"><img [src]="item.image" [alt]="item.title"><div><span>{{ item.category }}</span><h1>{{ item.title }}</h1><p>⭐ {{ item.rating.rate }} ({{ item.rating.count }})</p><p>{{ item.description }}</p><h2>{{ item.price | currency }}</h2><button type="button" (click)="addToCart(item)">Add to cart</button></div></article> }

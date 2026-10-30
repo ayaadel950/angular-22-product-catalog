@@ -1,0 +1,7 @@
+<h1>Checkout</h1>@if (submitted()) { <div class="message success">Order completed successfully.</div> } @else {
+<form [formGroup]="form" (ngSubmit)="submit()">
+<label>Name<input id="checkout-name" formControlName="name">@if(form.controls.name.touched && form.controls.name.hasError('required')){<small>Name is required.</small>}</label>
+<label>Email<input id="checkout-email" type="email" formControlName="email">@if(form.controls.email.touched && form.controls.email.invalid){<small>Enter a valid email.</small>}</label>
+<label>Address<textarea id="checkout-address" formControlName="address"></textarea>@if(form.controls.address.touched && form.controls.address.invalid){<small>Enter an address of at least 5 characters.</small>}</label>
+<label>Quantity<input id="checkout-quantity" type="number" min="1" formControlName="quantity">@if(form.controls.quantity.touched && form.controls.quantity.invalid){<small>Quantity must be at least 1.</small>}</label>
+<button id="submit-order" type="submit">Place order</button></form> }

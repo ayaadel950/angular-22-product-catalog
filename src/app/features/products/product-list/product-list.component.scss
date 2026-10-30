@@ -1,0 +1,4 @@
+.heading { display: flex; justify-content: space-between; align-items: end; gap: 1rem; margin-bottom: 2rem; }
+label { display: grid; gap: .35rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 1.25rem; }
+@media (max-width: 600px) { .heading { align-items: stretch; flex-direction: column; } }
